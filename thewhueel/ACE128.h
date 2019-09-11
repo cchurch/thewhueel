@@ -438,7 +438,7 @@ void ACE128::_eeprom_write_mpos()
 // write _zero to eeprom
 void ACE128::_eeprom_write_zero()
 {
-  uint16_t eeAddr = eeAddr + sizeof(_mpos);
+  uint16_t eeAddr = _eeAddr + sizeof(_mpos);
   #if defined(ACE128_EEPROM_I2C)
   Wire.beginTransmission(ACE128_EEPROM_ADDR);
   Wire.write((uint8_t) (eeAddr >> 8));
